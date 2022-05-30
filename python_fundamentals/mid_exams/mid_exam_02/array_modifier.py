@@ -22,11 +22,11 @@ while True:
         break
 
     if "decrease" in command:
-        decrease_elements(numbers_input)     #[x - 1 for x in numbers_input]
+        numbers_input = decrease_elements(numbers_input)     #[x - 1 for x in numbers_input]
     elif "swap" in command:
-        swap_places(numbers_input, int(command[1]), int(command[2]))
+        numbers_input = swap_places(numbers_input, int(command[1]), int(command[2]))
     elif "multiply" in command:
-        multiply_numbers(numbers_input, int(command[1]), int(command[2]))
+        numbers_input = multiply_numbers(numbers_input, int(command[1]), int(command[2]))
 
 numbers_input = [str(x) for x in numbers_input]
 print(", ".join(numbers_input))
