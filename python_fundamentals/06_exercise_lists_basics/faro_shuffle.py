@@ -1,13 +1,13 @@
 card_deck = input().split()
-shuffle = int(input())
-shuffled_deck = []
-for i in range(shuffle):
-    shuffled_deck = []
-    card_deck_separated = len(card_deck) // 2
-    left_half = card_deck[:card_deck_separated]
-    right_half = card_deck[card_deck_separated:]
-    for j in range(card_deck_separated):
-        shuffled_deck.append(left_half[j])
-        shuffled_deck.append(right_half[j])
-    card_deck = shuffled_deck
-print(shuffled_deck)
+number_shuffles = int(input())
+middle_deck = len(card_deck) // 2
+
+for shuffle in range(number_shuffles):
+    left_half = card_deck[:middle_deck]
+    right_half = card_deck[middle_deck:]
+    card_deck.clear()
+    for card in range(len(left_half)):
+        card_deck.append(left_half[card])
+        card_deck.append((right_half[card]))
+
+print(card_deck)
