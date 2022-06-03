@@ -4,9 +4,9 @@ numbers_filtered = []
 counter = 0
 
 while counter < beggars:
-    temp_sum = 0
+    sum = 0
     for num in range(counter, len(numbers), beggars):
-        temp_sum += numbers[num]
+        sum += numbers[num]
     counter += 1
-    numbers_filtered.append(temp_sum)
+    numbers_filtered.append(sum)
 print(numbers_filtered)
