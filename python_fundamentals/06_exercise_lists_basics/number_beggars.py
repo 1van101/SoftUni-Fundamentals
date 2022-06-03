@@ -1,12 +1,12 @@
-numbers = [int(x) for x in input().split(", ")]
-beggars = int(input())
-numbers_filtered = []
-counter = 0
+list_of_numbers = [int(x) for x in input().split(", ")]
+number_of_beggars = int(input())
 
-while counter < beggars:
-    sum = 0
-    for num in range(counter, len(numbers), beggars):
-        sum += numbers[num]
-    counter += 1
-    numbers_filtered.append(sum)
-print(numbers_filtered)
+final_list = []
+
+for beggar in range(number_of_beggars):
+    current_list = []
+    for current_beggar in range(beggar, len(list_of_numbers), number_of_beggars):
+        current_list.append(list_of_numbers[current_beggar])
+    final_list.append(sum(current_list))
+
+print(final_list)
