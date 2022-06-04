@@ -35,7 +35,7 @@ def min_even_odd(list, filtered_list):
 
 
 def first_even_odd(list, count, filtered_list):
-    first_count_evens = []
+    first_count_numbers = []
     if count > len(list):
         return "Invalid count"
     else:
@@ -43,20 +43,20 @@ def first_even_odd(list, count, filtered_list):
             return filtered_list
         else:
             for num in range(count):
-                first_count_evens.append(filtered_list[num])
-        return first_count_evens
+                first_count_numbers.append(filtered_list[num])
+        return first_count_numbers
 
 
 def last_even_odd(list, count, filtered_list):
-    last_count_evens = []
+    last_count_numbers = []
     if count > len(list):
         return "Invalid count"
     else:
         if count >= len(filtered_list):
             return filtered_list
         else:
-            last_count_evens = filtered_list[:len(filtered_list) - count - 1:-1]
-        return last_count_evens[::-1]
+            last_count_numbers = filtered_list[:len(filtered_list) - count - 1:-1]
+        return last_count_numbers[::-1]
 
 
 my_list_of_ints = [int(x) for x in input().split()]
