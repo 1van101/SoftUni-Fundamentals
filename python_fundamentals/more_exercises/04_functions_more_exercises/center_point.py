@@ -2,9 +2,9 @@ import math
 
 
 def get_closest_to_the_center_point(x1, y1, x2, y2):
-    if abs(x1) + abs(y1) > abs(x2) + abs(y2):
+    if x1 ** 2 + y1 ** 2 > x2 ** 2 + y2 ** 2:
         return f"({math.floor(x2)}, {math.floor(y2)})"
-    elif (abs(x1) + abs(y1) < abs(x2) + abs(y2)) or (abs(x1) + abs(y1) == abs(x2) + abs(y2)):
+    else:
         return f"({math.floor(x1)}, {math.floor(y1)})"
 
 
