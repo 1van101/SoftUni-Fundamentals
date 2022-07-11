@@ -1,40 +1,48 @@
-def add_user(forces_as_dict, to_side, user_to_be_added):
-    for side, users in forces_as_dict.items():
-        if user_to_be_added in users:
-            return forces_as_dict
-    if to_side not in forces_as_dict:
-        forces_as_dict[to_side] = [user_to_be_added]
-    else:
-        forces_as_dict[to_side].append(user_to_be_added)
-    return forces_as_dict
+def word_in_values(dct, word):
+    for words in dct.values():
+        if word in words:
+            return True
+    return False
 
 
-def change_side(forces_as_dict, to_side, user_to_be_changed):
-    for side, users in forces_as_dict.items():
-        if user_to_be_changed in users:
-            forces_as_dict[side].remove(user_to_be_changed)
-            return add_user(forces_as_dict, to_side, user_to_be_changed)
-    return add_user(forces_as_dict, to_side, user_to_be_changed)
+def remove_word_from_values(dct, word):
+    for words in dct.values():
+        if word in words:
+            words.remove(word)
+    return dct
 
 
-data = input()
+def create_or_add_user(dct, side, user):
+    if side not in dct:
+        dct[side] = []
+    if not word_in_values(dct, user):
+        dct[side].append(user)
+    return dct
 
-forces = {}
 
-while not data == "Lumpawaroo":
-    data_list = data.split(" | ")
-    if len(data_list) > 1:
-        side, user = data_list
-        forces = add_user(forces, side, user)
-    else:
-        user, side = data.split(" -> ")
-        forces = change_side(forces, side, user)
-        print(f"{user} joins the {side} side!")
+def change_side_of_user(dct, user, side):
+    if side not in dct:
+        dct[side] = []
+    if word_in_values(dct, user):
+        remove_word_from_values(dct, user)
+    dct[side].append(user)
+    print(f"{force_user} joins the {force_side} side!")
+    return dct
 
-    data = input()
 
-for side, users in forces.items():   
-    if users:
-        print(f"Side: {side}, Members: {len(users)}")
-        for user in users:      
-            print(f"! {user}")
+users = {}
+
+command = input()
+while not command == "Lumpawaroo":
+    if " | " in command:
+        force_side, force_user = command.split(" | ")
+        users = create_or_add_user(users, force_side, force_user)
+    elif " -> " in command:
+        force_user, force_side = command.split(" -> ")
+        users = change_side_of_user(users, force_user, force_side)
+    command = input()
+
+for k, v in users.items():
+    if v:
+        print(f"Side: {k}, Members: {len(v)}")
+        [print(f"! {x}") for x in v]
