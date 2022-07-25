@@ -1,15 +1,7 @@
-first_symbol = input()
-second_symbol = input()
-data = input()
+start = ord(input())
+end = ord(input())
+string = input()
 
-total_sum = 0
-special_symbols = []
-
-for i in range(ord(first_symbol) + 1, ord(second_symbol)):
-    special_symbols.append(chr(i))
-
-for token in data:
-    if token in special_symbols:
-        total_sum += ord(token)
+total_sum = sum([ord(x) for x in string if ord(x) in range(start + 1, end)])
 
 print(total_sum)

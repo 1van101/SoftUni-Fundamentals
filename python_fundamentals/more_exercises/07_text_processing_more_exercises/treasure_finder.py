@@ -1,43 +1,24 @@
-def get_decrypted_message(nums, text):
+def get_decrypted_message(key, mssg):
     decrypted_message = []
-    i = 0
-    for char in text:
-        char_to_num = ord(char) - nums[i]
-        decrypted_message.append(chr(char_to_num))
-        i += 1
-        if i >= len(nums):
-            i = 0
-    return decrypted_message
+    for i in range(len(mssg)):
+        decrypted_message.append(chr(ord(mssg[i]) - key[i % len(key)]))
+    return ''.join(decrypted_message)
 
-def get_type(message):
-    type = []
-    is_valid = False
-    counter = 0
-    for index in range(len(message)):
-        if message[index] == "&":
-            counter = index
-            while message[counter + 1] != "&":
-                type.append(message[counter + 1])
-                counter += 1
-            is_valid = True
-            break
-    if is_valid:
-        return type
 
-def get_coordinates(message):
-    coordinates = []
-    is_valid = False
-    counter = 0
-    for index in range(len(message)):
-        if message[index] == "<":
-            counter = index
-            while message[counter + 1] != ">":
-                coordinates.append(message[counter + 1])
-                counter += 1
-            is_valid = True
-            break
-    if is_valid:
-        return coordinates
+def get_data(mssg):
+    type_indices = []
+    coordinates_indices = []
+    for i in range(len(mssg)):
+        if mssg[i] == "&":
+            type_indices.append(i)
+        elif mssg[i] == "<":
+            coordinates_indices.append(i)
+        elif mssg[i] == ">":
+            coordinates_indices.append(i)
+
+    type = mssg[type_indices[0] + 1:type_indices[1]]
+    coordinates = mssg[coordinates_indices[0] + 1:coordinates_indices[1]]
+    return type, coordinates
 
 
 key = [int(x) for x in input().split()]
@@ -47,6 +28,5 @@ while True:
     if command == "find":
         break
     message = get_decrypted_message(key, command)
-    type = "".join(get_type(message))
-    coordinates = "".join(get_coordinates(message))
+    type, coordinates = get_data(message)
     print(f"Found {type} at {coordinates}")

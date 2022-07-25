@@ -1,22 +1,18 @@
-def get_name_and_age(text):
-    text = text.split()
-    name = ""
-    age = ""
-    for word in text:
+def extract_information(current_word, symbol_start, symbol_end):
+    start = current_word.index(symbol_start)
+    end = current_word.index(symbol_end)
+    return current_word[start + 1:end]
+
+
+n = int(input())
+for i in range(n):
+    name = None
+    age = None
+    string = input().split()
+
+    for word in string:
         if "@" in word and "|" in word:
-            at_index = word.index("@")
-            trait_index = word.index("|")
-            name = word[at_index + 1:trait_index]
+            name = extract_information(word, "@", "|")
         if "#" in word and "*" in word:
-            sharp_index = word.index("#")
-            star_index = word.index("*")
-            age = word[sharp_index + 1:star_index]
-
-    return f"{name} is {age} years old."
-
-
-number = int(input())
-
-for line in range(number):
-    data = input()
-    print(get_name_and_age(data))
+            age = extract_information(word, "#", "*")
+    print(f"{name} is {age} years old.")
