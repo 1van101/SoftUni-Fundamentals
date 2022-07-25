@@ -7,7 +7,7 @@ while True:
     username, contest, points = command.split(" -> ")
     points = int(points)
 
-    if contest not in results.keys():
+    if contest not in results:
         results[contest] = {username: points}
     else:
         if username not in results[contest].keys():
@@ -29,9 +29,8 @@ individual_standings = {}
 for cont, name_and_points in results.items():
     for name, points in name_and_points.items():
         if name not in individual_standings:
-            individual_standings[name] = points
-        else:
-            individual_standings[name] += points
+            individual_standings[name] = 0
+        individual_standings[name] += points
 
 number = 1
 
