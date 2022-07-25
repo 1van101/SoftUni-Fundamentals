@@ -1,34 +1,27 @@
 import re
 
-text = input().strip()
-text = text.split(",")
-# text = re.split(", *", input())
-demons = {}
 
-for demon in text:
-    demon = demon.strip()
-    health = 0
-    damage = 0
-    demons[demon] = []
-    health_matches = re.findall(r"([^0-9+\-*/.])", demon)
-    damage_matches = re.finditer(r"(?:\+|-)?[0-9]+(?:\.[0-9]+)?", demon)
-    multiplication_or_division = re.findall(r"[*/]", demon)
-    for char in health_matches:
-        health += ord(char)
-
-    for match in damage_matches:
-        damage += float(match.group(0))
-    for symbol in multiplication_or_division:
-        if symbol == "*":
-            damage *= 2
-        elif symbol == "/":
-            damage /= 2
-
-    demons[demon].append(health)
-    demons[demon].append(damage)
-
-for d, qtys in sorted(demons.items()):
-    print(f"{d} - {qtys[0]} health, {qtys[1]:.2f} damage")
+def altering_dmg(operators, dmg):
+    for operator in operators:
+        if operator == "*":
+            dmg *= 2
+        else:
+            dmg /= 2
+    return dmg
 
 
+demons = re.split(r"\s*,\s*", input())
+demons_dct = {}
 
+for demon in demons:
+    operators = re.findall(r"[*/]", demon)
+    current_demon_health = sum(ord(x) for x in re.findall(r"[^\d\-+*/.]", demon))
+    current_demon_dmg = sum([float(x.group(0)) for x in re.finditer(r"-*\d+(\.\d+)*", demon)])
+
+    if operators:
+        current_demon_dmg = altering_dmg(operators, current_demon_dmg)
+    demons_dct[demon] = {"health": current_demon_health, "dmg": current_demon_dmg}
+
+for current_demon in sorted(demons_dct.keys()):
+    print(
+        f"{current_demon} - {demons_dct[current_demon]['health']} health, {demons_dct[current_demon]['dmg']:.2f} damage")

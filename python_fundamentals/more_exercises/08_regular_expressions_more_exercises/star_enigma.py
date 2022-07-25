@@ -1,40 +1,32 @@
 import re
 
-lines = int(input())
-letters = ["s", "t", "a", "r", "S", "T", "A", "R"]
 
-planets = {"A": [], "D": []}
-current_message_decrypted = []
+def decrypting_message(text):
+    count_of_letters = len(re.findall(r"[star]", text, re.I))
+    decrypted_message = ''.join(chr(ord(x) - count_of_letters) for x in text)
+    return decrypted_message
 
-for messages in range(lines):
-    number_of_letters = 0
-    current_message = input()
-    for char in current_message:
-        if char in letters:
-            number_of_letters += 1
 
-    current_message_decrypted = [chr(ord(x) - number_of_letters) for x in current_message]
-    current_message_decrypted = "".join(current_message_decrypted)
-    matches = re.finditer(r"@([A-Z][a-z]+)([^@\-!:>]*):(\d+)([^@\-!:>]*)!([AD])!([^@\-!:>]*)->([0-9]+)", current_message_decrypted)
-
+def add_planets(text):
+    matches = re.finditer(r"@(?P<planet>[A-Za-z]+)[^A\-!:>]*:(\d+)[^A\-!:>]*!(?P<attack_type>[AD]{1})![^A\-!:>]*->(\d+)", text)
     for match in matches:
-        planet = match.group(1)
-        type_of_attack = match.group(5)
-
-        if planet not in planets[type_of_attack]:
-            planets[type_of_attack].append(planet)
+        planets[match.group("attack_type")].append(match.group("planet"))
 
 
-planets_sorted = {x:sorted(planets[x]) for x in planets.keys()}
+def print_data(planets, attack_type):
+    if planets[attack_type]:
+        [print(f"-> {x}") for x in sorted(planets[attack_type])]
 
-for k, v in planets_sorted.items():
-    if k == "A":
-        print(f"Attacked planets: {len(planets_sorted[k])}")
-        if len(planets_sorted[k]) > 0:
-            for elements in v:
-                print(f"-> {elements}")
-    else:
-        print(f"Destroyed planets: {len(planets_sorted[k])}")
-        if len(planets_sorted[k]) > 0:
-            for elements in v:
-                print(f"-> {elements}")
+
+lines = int(input())
+planets = {'A': [], 'D': []}
+
+for i in range(lines):
+    text = input()
+    decrypted_message = decrypting_message(text)
+    add_planets(decrypted_message)
+
+print(f"Attacked planets: {len(planets['A'])}")
+print_data(planets, 'A')
+print(f"Destroyed planets: {len(planets['D'])}")
+print_data(planets, 'D')
