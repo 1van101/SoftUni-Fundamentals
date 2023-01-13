@@ -1,0 +1,19 @@
+section article{
+    font-style: italic;
+    /* padding: 5px 15px; */
+    background-color: #f2f4c0;
+    margin: 15px 10px;
+    color: #4c7658;
+}
+
+article {
+    /* padding: 5px 15px; */
+    background-color: #f2f4c0;
+    margin: 15px 10px;
+}
+
+body{
+    width: 700px;
+    border: 1px solid #b2ad7d;
+    background-color: #e4e978;
+}
