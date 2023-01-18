@@ -1,0 +1,60 @@
+html {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.article-header {
+    font-family: Georgia, serif;
+}
+
+blockquote {
+    border-left-style: solid;
+    border-left-color: rgb(221, 221, 221);
+    padding: 20px;
+    font-style: italic;
+}
+
+.signature {
+    text-align: right;
+}
+
+/* table{
+    border: 1px solid #777;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 3px;
+}
+
+th{
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: left;
+    background-color: lightgray;
+}
+
+tr:nth-child(odd){
+    background-color: rgb(221,221,221);
+} */
+
+
+table{
+    border-radius: 3px;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid rgb(180, 180, 180);
+}
+th{
+    background-color: darkgray;
+    text-align: left;
+    padding: 3px;
+}
+td{
+    border: 1px solid rgb(180, 180, 180);
+    text-align: left;
+    padding: 3px;
+}
+tr:nth-child(odd){
+    background-color: rgb(222,222,222);
+}
