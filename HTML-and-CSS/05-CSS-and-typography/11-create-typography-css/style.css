@@ -19,26 +19,6 @@ blockquote {
     text-align: right;
 }
 
-/* table{
-    border: 1px solid #777;
-    border-collapse: collapse;
-    width: 100%;
-    padding: 3px;
-}
-
-th{
-    display: table-cell;
-    vertical-align: inherit;
-    font-weight: bold;
-    text-align: left;
-    background-color: lightgray;
-}
-
-tr:nth-child(odd){
-    background-color: rgb(221,221,221);
-} */
-
-
 table{
     border-radius: 3px;
     border-collapse: collapse;
