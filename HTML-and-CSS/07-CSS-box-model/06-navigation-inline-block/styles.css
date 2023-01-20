@@ -1,0 +1,27 @@
+html{
+    font-family: Helvetica, sans-serif;
+    background-color: rgb(252, 252, 252);
+}
+
+nav, ul, li{
+    display: inline-block;
+}
+
+.title{
+    display: inline-block;
+    margin-right: 60px;
+}
+
+a{
+    text-decoration: none;
+    color: green;
+    margin: 5px;
+}
+
+header{
+    border-bottom: solid 2px;
+
+}
+main{
+    color: rgb(77, 74, 74);
+}
