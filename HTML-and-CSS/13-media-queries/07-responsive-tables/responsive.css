@@ -1,0 +1,10 @@
+@media screen and (max-width: 375px){
+    
+	tr {
+		display: block;
+	}
+	td {
+		display: block;
+	}
+    
+}
