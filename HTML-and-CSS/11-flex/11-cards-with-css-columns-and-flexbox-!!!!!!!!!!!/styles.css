@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: rgb(238, 238, 238);
+    margin: 70px 200px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.card {
+    position: relative;
+    border-radius: 8px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgb(182, 178, 178);
+}
+
+.card section {
+    padding: 6px 12px;
+    margin-bottom: 75px;
+}
+
+.card footer {
+    box-sizing: border-box;
+    border-top: 1px solid rgb(211, 209, 209);
+    padding: 0px 10px;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+}
+
+.card img {
+    width: 100%;
+}
+
+/* ---GRID--- */
+
+.masonry {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    grid-template-areas:
+        'c1 c2 c3'
+        'c4 c2 c3'
+        'c4 c5 c3'
+        'c4 c5 c3'
+        'c4 c5 c6'
+        'c7 c8 c6'
+        'c7 c8 .'
+        'c7 . .'
+    ;
+}
+
+.masonry>.card:nth-child(1) {
+    grid-area: c1;
+}
+
+.masonry>.card:nth-child(2) {
+    grid-area: c2;
+}
+
+.masonry>.card:nth-child(3) {
+    grid-area: c3;
+}
+
+.masonry>.card:nth-child(4) {
+    grid-area: c4;
+}
+
+.masonry>.card:nth-child(5) {
+    grid-area: c5;
+}
+
+.masonry>.card:nth-child(6) {
+    grid-area: c6;
+}
+
+.masonry>.card:nth-child(7) {
+    grid-area: c7;
+}
+
+.masonry>.card:nth-child(8) {
+    grid-area: c8;
+}
+
+
+/* ---FLEX--- */
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    width: 100%;
+
+}
+
+.flex .card {
+    height: auto;
+    width: calc((100% - 44px) / 3);
+    
+    /* instead width: calc((100% - 44px) / 3); ->*/
+    
+    /* flex-grow: 1;
+    width: 30%; */
+}
