@@ -1,0 +1,100 @@
+@media (max-width: 500px) {
+    html{
+        font-size: 12px;
+    }
+    body{
+        padding: 0px 20px;
+    }
+    header > p{
+        font-size: 2rem;
+    }
+    .text{
+        border-right: 2px solid gray;
+    }
+    blockquote{
+        font-size: 12px;
+    }
+    .first {
+        float:unset;
+        width: 40%;
+        margin: 2px;
+    }
+    .second {
+        float:unset;
+        width: 50%;
+        margin: 0px 15px 10px 0px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 600px){
+    html{
+        font-size: 14px;
+    }
+    body{
+        padding: 0px 25px;
+    }
+    header > p{
+        font-size: 2rem;
+    }
+    .text{
+        border-right: 2px solid gray;
+    }
+    blockquote{
+        font-size: 12px;
+    }
+    .first {
+        float:unset;
+        width: 40%;
+        margin: 2px;
+    }
+    .second {
+        float:unset;
+        width: 50%;
+        margin: 0px 15px 10px 0px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800px){
+    html{
+        font-size: 16px;
+    }
+    body{
+        padding: 0px 35px;
+    }
+    .first {
+        float:right;
+        width: 40%;
+        margin: 2px;
+    }
+    .second {
+        float:left;
+        width: 50%;
+        margin: 0px 15px 10px 0px;
+    }
+    .text{
+        width: 40%;
+    }
+    blockquote{
+        width: 25%;
+    }
+}
+@media (min-width: 800px) and (max-width: 1300px){
+    body{
+        padding: 0px 60px;
+    }
+    
+    html{
+        font-size: 18px;
+    }
+}
+@media (min-width: 1300px) and (max-width: 1800px){
+    html{
+        font-size: 21px;
+    }
+}
+
+@media (min-width: 1800px){
+    html{
+        font-size: 23px;
+    }
+}

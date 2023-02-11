@@ -1,0 +1,59 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css);
+
+html {
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    width: fit-content;
+    padding: 10px 30px;
+    border: 2px solid rgb(161, 159, 159);
+    box-shadow: 0px 0px 15px rgb(150, 149, 149);
+    padding: 30px;
+}
+legend{
+    box-shadow: 0px 0px 15px rgb(150, 149, 149);
+    border: 1px solid rgb(161, 159, 159);
+    background-color: rgb(244, 244, 244);
+    border-radius: 3px;
+
+    padding: 7px 80px 7px 7px;
+
+}
+
+button {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.783);
+    padding: 3px 9px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+input:focus {
+    background-color: rgb(247, 247, 247);
+}
+
+.password{
+    margin-right: 3px;
+}
+
+
+fieldset{
+    background-color: rgb(244, 244, 244);
+    border-radius: 3px;
+    box-shadow: 0px 0px 15px rgb(150, 149, 149);
+}
+
+input{
+    border-radius: 3px;
+    border: 1px solid rgb(199, 199, 199);
+    width: 200px;
+}
+
+i{
+    position: relative;
+    font-size: 10px;
+    left: 21px;
+}

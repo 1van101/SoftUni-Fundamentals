@@ -1,0 +1,41 @@
+body {
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+        'header header header header header header'
+        'aside main main main main main'
+        'footer footer footer footer footer footer'
+    ;
+}
+
+/* --Grid areas-- */
+
+header {
+    grid-area: header;
+}
+
+aside {
+    grid-area: aside;
+    line-height: 2;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+
+@media (max-width: 500px) {
+    body{
+        display: grid;
+        grid-template-areas: 
+        'header header'
+        'aside aside'
+        'main main'
+        'footer footer'
+    ;}
+}
+

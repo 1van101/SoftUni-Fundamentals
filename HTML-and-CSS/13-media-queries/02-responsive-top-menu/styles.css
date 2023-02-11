@@ -1,0 +1,37 @@
+html {
+    margin: 10px;
+    height: 90vh;
+    width: 60vw;
+}
+
+main p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+header,
+aside,
+main,
+footer {
+    background-color: rgba(135, 189, 250, 0.721);
+    border-radius: 4px;
+    padding: 16px 10px;
+    vertical-align: middle;
+}
+header h1{
+    display: inline-block;
+    margin-right: 50px;
+}
+header nav{
+    display: inline-block;
+    margin-top: 8px;
+}
+
+header nav ul li{
+    display: inline;
+    padding: 5px 15px;
+}
+header nav ul li a{ 
+    color: rgb(53, 100, 153);
+    
+}
