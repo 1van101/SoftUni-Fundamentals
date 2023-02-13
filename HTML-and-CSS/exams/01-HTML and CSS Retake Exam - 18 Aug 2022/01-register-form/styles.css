@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css2?family=Mulish&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Mulish;
+    color: rgb(110, 107, 107);
+}
+
+body {
+    display: flex;
+    background-image: url('background.png');
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-image: url('form-background.png');
+    width: 720px;
+    height: 470px;
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: 15px 15px 15px gray;
+}
+
+form{
+    display:grid;
+    margin: 40px 0px 0px 10px;
+    padding: 20px;
+    width: 50%;
+    height: 80%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+    'form form'
+    'fname lname'
+    'mail mail'
+    'pwd pwd'
+    'cpwd cpwd'
+    'agree agree'
+    'bttn bttn';
+    gap: 10px;
+}
+
+h2{
+    grid-area: form;
+    justify-self: center;
+}
+
+.fname{
+    grid-area: fname;
+}
+
+.lname{
+    grid-area: lname;
+}
+
+.mail{
+    grid-area: mail;
+}
+
+.pwd{
+    grid-area: pwd;
+}
+.confirm-pwd{
+    grid-area: cpwd;
+}
+.terms{
+    grid-area: agree;
+}
+.registerbtn{
+    grid-area: bttn;
+    justify-self: center;
+    height: 30px;
+    padding: 0px 14px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(202, 17, 17);
+    color: white;
+
+}
+
+input{
+    border-radius: 15px;
+    border: 1px solid rgb(168, 168, 168);
+    height: 30px;
+    width: 100%;
+    padding: 10px;
+}
+
+
+.terms input{
+    width: auto;
+    height: auto;
+}
