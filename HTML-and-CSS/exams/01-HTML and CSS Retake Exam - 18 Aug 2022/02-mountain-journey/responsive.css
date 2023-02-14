@@ -1,0 +1,40 @@
+@media screen and (max-width: 600px) {
+    header, nav, nav img, nav ul, .choose-us ul, .blog-news ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    header nav ul li:first-child {
+        margin-top: 12px;
+    }
+    .header-title {
+        padding: 1em 0;
+    }
+    p {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+
+    .team-description ul {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    li {
+        width: 45%;
+    }
+    .team-description ul li img {
+        width: 100%;
+    }
+    .blog-news ul .item{
+        width: 75%;
+        margin: 8px;
+    }
+
+}
