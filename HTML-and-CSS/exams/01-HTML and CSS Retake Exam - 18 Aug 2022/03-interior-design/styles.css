@@ -1,0 +1,159 @@
+/* qupte darker - #a38c7b
+quote lighter - #cbb6a6*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@100&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    ;
+}
+
+h1,
+h2 {
+    font-family: 'Abril Fatface', cursive;
+    ;
+}
+
+body {
+    margin: 0px 60px;
+}
+
+span {
+    font-weight: bold;
+}
+
+
+
+/*-----UPPER------*/
+
+header {
+    display: flex;
+    flex-direction: column;
+
+    background-image: url(image.jpg);
+    height: 120vh;
+
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+
+}
+
+.c-name {
+    width: 210px;
+    padding: 5px 50px 5px 10px;
+    border: 2px solid rgb(164, 163, 163);
+    box-shadow: 0px 0px 15px rgb(164, 163, 163);
+    border-radius: 2px;
+}
+
+.c-name h1 {
+    border-bottom: 2px solid white;
+    padding-bottom: 16px;
+}
+
+.quote {
+    width: 330px;
+    border: 2px solid rgb(164, 163, 163);
+    box-shadow: 0px 0px 15px rgb(164, 163, 163);
+    border-radius: 2px;
+    text-align: right;
+    background: linear-gradient(90deg, rgb(189, 180, 180) 11%, rgba(222, 215, 210, 1) 65%);
+    color: white;
+    align-self: flex-end;
+}
+
+i {
+    color: rgb(151, 148, 148);
+}
+
+/*----LOWER-----*/
+
+.wrapper {
+    display: flex;
+}
+
+
+.left {
+    display: inline-block;
+    background-color: rgb(239, 239, 239);
+    width: 70%;
+    padding: 60px;
+}
+
+.left ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+.left ul li {
+    margin-bottom: 20px;
+    margin-right: 30px;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer h2 {
+    margin-top: 80px;
+    border-bottom: 2px solid rgb(180, 180, 180);
+}
+
+input,
+button {
+    background-color: rgb(189, 180, 180);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background-color: #67784d;
+    cursor: pointer;
+}
+
+input {
+    width: 250px;
+    margin-right: 6px;
+}
+
+.mail {
+    margin-top: 30px;
+}
+
+
+
+
+.right {
+    background-color: rgb(189, 180, 180);
+    display: flex;
+    flex-direction: column;
+    display: inline-block;
+    width: 30%;
+    vertical-align: top
+}
+
+.right ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.right ul li {
+    list-style: none;
+    height: calc(100% / 4);
+}
+
+.numbers {
+    color: white;
+    font-size: 46px;
+}
