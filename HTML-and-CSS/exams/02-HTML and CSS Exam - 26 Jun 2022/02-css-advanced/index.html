@@ -1,69 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
-            rel="stylesheet"
-            type="text/css"
-        />
-        <link rel="stylesheet" href="style.css" />
-        <title>Home Design</title>
-    </head>
-    <body>
-        <div class="main">
-            <div class="header">
-                <h1>Maine Home</h1>
-                <h3>+DESIGN</h3>
-            </div>
-            <div class="cards">
-                <div class="cardContainer">
-                    <div class="imgContainer">
-                        <img src="./01. Home Design_Ресурси/image/image1.jpg" alt="imgContainer" />
-                    </div>
-                    <div class="cardHeading"><h3>Making Hostel Home</h3></div>
-                    <hr />
-                    <div class="cardBody">
-                        <p>
-                            Heather Loeber thinks outside of the box to decorate her one-of-a-kind
-                            space
-                        </p>
-                    </div>
-                    <div class="cardButton"><button>Continue reading</button></div>
-                </div>
-                <div class="cardContainer">
-                    <div class="imgContainer">
-                        <img src="./01. Home Design_Ресурси/image/image2.jpg" alt="img" />
-                    </div>
-                    <div class="cardHeading"><h3>Warm & Weathered</h3></div>
-                    <hr />
-                    <div class="cardBody">
-                        <p>
-                            Lisa Hincher of The Good Home Interiors and Design infuses a multitude
-                            of styles into one cohesive space
-                        </p>
-                    </div>
-                    <div class="cardButton"><button>Continue reading</button></div>
-                </div>
-                <div class="cardContainer">
-                    <div class="imgContainer">
-                        <img src="./01. Home Design_Ресурси/image/image3.jpg" alt="img" />
-                    </div>
-                    <div class="cardHeading"><h3>Coastal Consideration</h3></div>
-                    <hr />
-                    <div class="cardBody">
-                        <p>
-                            Melissa Freeman, lead designer at Hurlbutt Designs, uses color to create
-                            the perfect atmosphere
-                        </p>
-                    </div>
-                    <div class="cardButton"><button>Continue reading</button></div>
-                </div>
-            </div>
-        </div>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>CSS Advanced</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <main>
+        <section class="left-to-right">
+
+            <article>
+                <header>
+                    <h1>CSS Advanced</h1>
+                    <p>Become a master at CSS in SoftUni</p>
+                </header>
+                <p>
+                    Learn to Code Advanced HTML & CSS takes a deeper look at front-end design and development,
+                    expanding on what is covered in the beginner’s guide. Studying modern front-end development, this
+                    guide teaches the latest for any designer looking to round out their front-end skills.
+                </p>
+
+                <button>
+                    Learn more...
+                </button>
+            </article>
+
+        </section>
+
+        <section>
+
+            <article>
+                <header>
+                    <h1>Previous experience</h1>
+                    <p>You can't become a master if you don't have the basic knowledge</p>
+                </header>
+                <p>
+                    Learn to Code Advanced HTML & CSS takes a deeper look at front-end design and development,
+                    expanding on what is covered in the beginner’s guide. Studying modern front-end development, this
+                    guide teaches the latest for any designer looking to round out their front-end skills.
+                </p>
+
+                <button>
+                    Learn more...
+                </button>
+
+            </article>
+
+            <article>
+                <img src="img/img-01.png">
+            </article>
+
+        </section>
+
+        <section class="left-to-right">
+
+            <article>
+                <header>
+                    <h1>Web Fundamentals</h1>
+                </header>
+                <p>
+                    Learn to Code Advanced HTML & CSS takes a deeper look at front-end design and development,
+                    expanding on what is covered in the beginner’s guide. Studying modern front-end development, this
+                    guide teaches the latest for any designer looking to round out their front-end skills.
+                </p>
+
+                <button>
+                    Learn more...
+                </button>
+            </article>
+
+        </section>
+
+        <section>
+
+            <article>
+                <form>
+                    <label for="name">
+                        <input type="text" placeholder="Name" id="name">
+                    </label>
+
+                    <label for="email">
+                        <input type="email" placeholder="Email" id="email">
+                    </label>
+
+                    <label for="message">
+                        <textarea id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                    </label>
+
+                    <label for="send">
+                        <input type="submit" value="Send" id="send">
+                    </label>
+                </form>
+            </article>
+
+            <article>
+                <img src="img/img-02.png">
+            </article>
+
+        </section>
+    </main>
+</body>
 </html>
