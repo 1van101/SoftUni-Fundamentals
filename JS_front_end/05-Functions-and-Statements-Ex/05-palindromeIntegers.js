@@ -18,4 +18,14 @@ function solve(input){
     }
 }
 
-solve([32,2,232,1010])
+// =======================================================================================
+// function solve(input) {
+//     let isPalindrome = (num) => Number([...String(num)].reverse().join('')) === num;
+
+//     input
+//         .forEach((element) => {
+//             console.log(isPalindrome(element))
+//         });
+// }
+
+solve([32, 2, 232, 1010])
