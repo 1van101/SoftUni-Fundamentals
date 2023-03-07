@@ -28,4 +28,12 @@ function solve(input){
 //         });
 // }
 
+// ===========================================================================================
+// function solve(input) {
+//     let isPalindrome = (num) => Number([...String(num)].reverse().join('')) === num;
+
+//     return input
+//         .map(isPalindrome)
+//         .join('\n');
+// }
 solve([32, 2, 232, 1010])
