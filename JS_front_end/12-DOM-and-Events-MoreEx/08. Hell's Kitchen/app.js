@@ -1,8 +1,3 @@
-// "PizzaHut - Peter 500, George 300, Mark 800
-
-
-
-
 function solve() {
    document.querySelector('#btnSend').addEventListener('click', onClick);
    function onClick() {
