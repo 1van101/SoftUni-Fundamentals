@@ -8,12 +8,8 @@ async function getInfo() {
     
     try{
         let response = await fetch(`${BASE_URL}${inputId}`);
-        
-        if (response.status === 204){
-            throw new Error()
-        }
-        
         let data = await response.json();
+        
         stopName.textContent = data.name;
         for (const [busId, time] of Object.entries(data.buses)) {
             let newLi = document.createElement('li')
@@ -21,6 +17,6 @@ async function getInfo() {
             busesList.appendChild(newLi);
         }
     }catch(e){
-        stopName.textContent = e;
+        stopName.textContent = "Error";
     }
 }
