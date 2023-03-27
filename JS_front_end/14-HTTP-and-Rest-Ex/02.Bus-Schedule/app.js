@@ -12,16 +12,17 @@ function solve() {
 
         try {
             let response = await fetch(`${BASE_URL}${stop}`)
-            if (response.status === 204) {
-                throw new Error()
-            };
+
+            // if (!response.ok) {
+            //     throw new Error()
+            // };
             
             let data = await response.json();
             name = data.name;
             stop = data.next;
             info.textContent = `Next stop ${name}`;
         } catch (e) {
-            info.textContent = e
+            info.textContent = 'Error'
             departBtn.disabled = true;
             arriveBtn.disabled = true;
         }
