@@ -1,7 +1,6 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse
+from django.shortcuts import render, redirect
 
-from my_plant_app.web.context_processors import get_profile
+# from my_plant_app.web.context_processors import get_profile
 from my_plant_app.web.forms import ProfileCreateForm, PlantCreateForm, PlantEditForm, PlantDeleteForm, ProfileEditForm
 from my_plant_app.web.models import Profile, Plant
 
