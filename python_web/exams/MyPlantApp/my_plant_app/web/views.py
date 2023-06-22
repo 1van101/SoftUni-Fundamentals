@@ -14,7 +14,7 @@ def get_profile():
 
 
 def get_plant(id):
-    plant = Plant.objects.get(id=id)
+    plant = Plant.objects.filter(id=id).get()
     return plant
 
 

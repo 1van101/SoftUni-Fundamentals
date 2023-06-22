@@ -4,18 +4,24 @@ from my_plant_app.web.models import Profile, Plant
 
 
 # PROFILE
-class ProfileCreateForm(forms.ModelForm):
+
+class ProfileBaseForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = '__all__'
-        exclude = ['profile_picture']
+        fields = ['username', 'first_name', 'last_name']
+        labels = {
+            'first_name': 'First Name',
+            'last_name': 'Last Name',
+            'profile_picture': 'Profile Picture'
+        }
 
 
-class ProfileEditForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = '__all__'
+class ProfileCreateForm(ProfileBaseForm):
+    pass
 
+
+class ProfileEditForm(ProfileBaseForm):
+    ProfileBaseForm.Meta.fields.append('profile_picture')
 
 
 # PLANT
@@ -24,6 +30,9 @@ class PlantBaseForm(forms.ModelForm):
     class Meta:
         model = Plant
         fields = '__all__'
+        labels = {
+            'image_url': 'Image URL'
+        }
 
 
 class PlantCreateForm(PlantBaseForm):
