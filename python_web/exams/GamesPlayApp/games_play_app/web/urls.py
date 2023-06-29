@@ -1,7 +1,8 @@
 from django.urls import path, include
 
 from games_play_app.web.views import EditGameView, DeleteGameView, DetailsProfileView, \
-    edit_profile, delete_profile, HomePageView, CreateProfileView, DashboardGameView, CreateGameView, DetailsGameView
+    HomePageView, CreateProfileView, DashboardGameView, CreateGameView, DetailsGameView, \
+    EditProfileView, DeleteProfileView
 
 urlpatterns = (
     path('', HomePageView.as_view(), name='home page'),
@@ -15,7 +16,7 @@ urlpatterns = (
     path('profile/', include([
         path('create/', CreateProfileView.as_view(), name='create profile'),
         path('details/', DetailsProfileView.as_view(), name='details profile'),
-        path('edit/', edit_profile, name='edit profile'),
-        path('delete/', delete_profile, name='delete profile'),
+        path('edit/', EditProfileView.as_view(), name='edit profile'),
+        path('delete/', DeleteProfileView.as_view(), name='delete profile'),
     ]))
 )

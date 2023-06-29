@@ -1,5 +1,4 @@
 from django.forms import modelform_factory
-from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic as views
 from games_play_app.web.forms import CreateProfileForm, CreateGameForm
@@ -95,10 +94,31 @@ class DetailsProfileView(views.DetailView):
         return context
 
 
+class EditProfileView(views.UpdateView):
+    model = Profile
+    template_name = 'profile/edit-profile.html'
+    form_class = modelform_factory(
+        model,
+        fields='__all__',
+    )
 
-def edit_profile(request):
-    pass
+    success_url = reverse_lazy('home page')
+
+    def get_object(self, queryset=None):
+        return Profile.objects.first()
+
+    def get_form_kwargs(self):
+        instance = self.get_object()
+        form_kwargs = super().get_form_kwargs()
+
+        form_kwargs.update(instance=instance)
+        return form_kwargs
 
 
-def delete_profile(request):
-    pass
+class DeleteProfileView(views.DeleteView):
+    model = Profile
+    template_name = 'profile/delete-profile.html'
+    success_url = reverse_lazy('home page')
+
+    def get_object(self, queryset=None):
+        return Profile.objects.first()
